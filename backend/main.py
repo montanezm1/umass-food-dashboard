@@ -26,6 +26,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def health_check():
+    """Simple health check endpoint"""
+    return {"status": "healthy", "message": "UMass Food Finder API is running!"}
+
 @app.get("/menus")
 def get_menus():
     """Get all dining hall menus for today"""
