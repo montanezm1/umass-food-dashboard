@@ -16,7 +16,7 @@ A modern, responsive web application that helps UMass students find and track fo
 - **Station Categories**: Browse by food stations (Grill, Pizza, Sushi, etc.)
 - **Nutrition Tracking**: Track calories, protein, carbs, and fat
 - **Daily Log**: Keep track of your daily food intake
-- **⚡ Real-time Data**: Fresh menu data scraped directly from UMass dining
+- **Real-time Data**: Fresh menu data scraped directly from UMass dining
 
 ## 🚀 Quick Start
 
