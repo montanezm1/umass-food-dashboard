@@ -6,6 +6,15 @@ __pycache__/
 # C extensions
 *.so
 
+# Database files
+*.db
+menus.db
+
+# Environment variables
+.env
+.env.local
+.env.production
+
 # Distribution / packaging
 .Python
 build/

@@ -1,6 +1,7 @@
 {
   "name": "umass-food-tracker",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A modern web app to find and track food across UMass dining halls",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",

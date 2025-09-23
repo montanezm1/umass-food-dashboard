@@ -1,0 +1,538 @@
+/* Modern CSS Reset and Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #8b1538;
+  --primary-light: #a8426b;
+  --primary-dark: #6b0f28;
+  --secondary-color: #f8f9fa;
+  --accent-color: #ffd700;
+  --text-dark: #2c3e50;
+  --text-light: #6c757d;
+  --border-color: #e9ecef;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-lg: 0 4px 8px rgba(0,0,0,0.15);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: #f8f9fa;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Filters Section */
+.filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .filters {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.search-bar, select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background: white;
+}
+
+.search-bar:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+}
+
+.search-bar::placeholder {
+  color: var(--text-light);
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.results-count {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.clear-filters {
+  padding: 0.5rem 1rem;
+  background: var(--text-light);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.clear-filters:hover {
+  background: var(--text-dark);
+}
+
+/* Main Content Layout */
+.main-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 2rem;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: static;
+    order: -1;
+    max-height: none;
+  }
+}
+
+/* Content Area */
+.content {
+  min-width: 0; /* Prevents overflow in grid */
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.food-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.food-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.food-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  line-height: 1.3;
+}
+
+.food-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-tag {
+  background: var(--secondary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.station-tag {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Dining Hall Colors */
+.hall-tag.hall-berkshire {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.hall-tag.hall-franklin {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.hall-tag.hall-hampshire {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+}
+
+.hall-tag.hall-worcester {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  color: white;
+}
+
+/* Meal Colors */
+.meal-tag.meal-breakfast {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
+}
+
+.meal-tag.meal-lunch {
+  background: linear-gradient(135deg, #16a085, #1abc9c);
+  color: white;
+}
+
+.meal-tag.meal-dinner {
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+  color: white;
+}
+
+.serving-size-text {
+  font-size: 0.85rem;
+  color: #000000;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+/* Quantity Controls */
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.quantity-select {
+  padding: 0.4rem 0.6rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.quantity-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.add-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Food Card Nutrition Boxes */
+.food-card .nutrition-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem;
+  margin: 0.75rem 0;
+}
+
+.food-card .nutrition-box {
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.food-card .nutrition-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.food-card .nutrition-label {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+/* Daily Log Section */
+.daily-log {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-top: 1.5rem;
+}
+
+.daily-log h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.log-grid {
+  display: grid;
+  gap: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.log-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--secondary-color);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+}
+
+.empty-log {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.log-item-info h4 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.log-item-info p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.serving-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem !important;
+}
+
+.quantity-badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.serving-size {
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+.nutrition-summary {
+  font-size: 0.75rem !important;
+  color: var(--text-light) !important;
+}
+
+.remove-button {
+  padding: 0.4rem 0.8rem;
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.8rem;
+  align-self: flex-start;
+}
+
+.remove-button:hover {
+  background: #c82333;
+}
+
+/* Totals Section */
+.totals {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.totals h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.nutrition-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nutrition-box {
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-box.calories {
+  background: linear-gradient(135deg, #ff9999, #ff8080);
+}
+
+.nutrition-box.carbs {
+  background: linear-gradient(135deg, #7dd3c0, #66ccb3);
+}
+
+.nutrition-box.protein {
+  background: linear-gradient(135deg, #74c5e0, #5db8d6);
+}
+
+.nutrition-box.fat {
+  background: linear-gradient(135deg, #fdd574, #fcce4a);
+}
+
+.nutrition-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nutrition-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--text-light);
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
