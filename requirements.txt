@@ -1,3 +1,8 @@
-# This file helps Railway detect this as a Python project
-# The actual requirements are in backend/requirements.txt
--r backend/requirements.txt
+# Railway deployment requirements
+# These mirror backend/requirements.txt for proper Python detection
+fastapi==0.104.1
+uvicorn==0.24.0
+beautifulsoup4==4.12.2
+requests==2.31.0
+schedule==1.2.0
+python-multipart==0.0.6
