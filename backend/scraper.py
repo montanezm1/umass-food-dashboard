@@ -76,7 +76,6 @@ def scrape_all_halls():
     
     return all_food_items
 
-# Example usage
 if __name__ == "__main__":
     foods = scrape_all_halls()
     print(foods[1])

@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
 """
-UMass Food Finder - Entry point for Railway deployment
+UMass Food Dashboard - Entry point for Railway deployment
 This file helps Railway detect the project as Python and starts the backend server.
 """
 

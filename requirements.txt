@@ -1,5 +1,3 @@
-# Railway deployment requirements
-# These mirror backend/requirements.txt for proper Python detection
 fastapi==0.104.1
 uvicorn==0.24.0
 beautifulsoup4==4.12.2

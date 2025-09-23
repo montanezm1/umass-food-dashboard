@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Menu Cache Scheduler
 Automatically refreshes menu cache every few hours
